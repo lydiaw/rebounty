@@ -75,6 +75,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(SITE_ROOT)+"/static",
 )
 
 # List of finder classes that know how to find static files in
@@ -85,6 +86,16 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
     os.path.join(SITE_ROOT)
 )
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.contrib.auth.context_processors.auth',
+    'django.contrib.messages.context_processors.messages',
+)
+
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '8l892_vu=n_ip11sc&au#+@onr-tbaz4tau0f8@9a=z5_2vu12'
